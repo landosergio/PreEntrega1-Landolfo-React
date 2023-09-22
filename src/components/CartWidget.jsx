@@ -1,7 +1,7 @@
 function CartWidget() {
   return (
     <a href="#">
-      <div className="flex justify-between items-center py-2 px-4  rounded font-bold hover:bg-slate-500">
+      <div className="flex justify-between items-center py-2 px-4  rounded-tl rounded-tr font-bold hover:bg-slate-500">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
