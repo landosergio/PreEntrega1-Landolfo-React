@@ -4,11 +4,11 @@ function ItemCount({ initial, stock, onAdd }) {
   const [cantProd, setCantProd] = useState(initial);
 
   return (
-    <div className="flex items-center mb-4 text-slate-700 ">
-      <div className="flex mx-2  border rounded-md">
+    <div className="flex flex-col justify-center items-center mb-4 text-slate-700 ">
+      <div className="flex mx-2 my-4  border rounded-md">
         <button
           className="px-3 py-1 "
-          onClick={() => (cantProd > 0 ? setCantProd(cantProd - 1) : null)}
+          onClick={() => (cantProd > 1 ? setCantProd(cantProd - 1) : null)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@ function ItemCount({ initial, stock, onAdd }) {
             <path strokeLinecap="round" strokeLinejoin="round" d="M18 12H6" />
           </svg>
         </button>
-        <span className="mx-12 px-3 py-1  text-2xl"> {cantProd} </span>
+        <span className="lg:mx-12 lg:px-3 py-1  lg:text-2xl"> {cantProd} </span>
         <button
           className="px-3 py-1 "
           onClick={() => (cantProd < stock ? setCantProd(cantProd + 1) : null)}
@@ -53,27 +53,3 @@ function ItemCount({ initial, stock, onAdd }) {
 }
 
 export default ItemCount;
-
-/*
-FUNC pasadas a ternarias
-
-  function sumar() {
-    if (cantProd < stock) {
-      setCantProd(cantProd + 1);
-    }
-  }
-
-  function restar() {
-    if (cantProd > 0) {
-      setCantProd(cantProd - 1);
-    }
-  }
-
-  function agregarAlCarrito () {
-    if (stock) {
-        onAdd(cantProd)
-    }
-  }
-
-  
-*/
