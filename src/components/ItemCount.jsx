@@ -44,9 +44,9 @@ function ItemCount({ initial, stock, onAdd }) {
       </div>
       <button
         className="border py-2 px-6 mx-2 rounded-md text-xs font-bold"
-        onClick={() => (stock ? onAdd(cantProd) : null)}
+        onClick={() => stock && onAdd(cantProd)}
       >
-        Agregar al carrito
+        Confirmar
       </button>
     </div>
   );

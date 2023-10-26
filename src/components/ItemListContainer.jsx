@@ -8,6 +8,8 @@ function ItemListContainer({ greeting }) {
   const [productos, setProductos] = useState([]);
   const { categoria } = useParams();
 
+  let inCart = false;
+
   useEffect(() => {
     const pedirItems = new Promise((resolve, reject) => {
       setTimeout(() => resolve(stockProductos), 1000);
@@ -33,7 +35,7 @@ function ItemListContainer({ greeting }) {
         {productos[0] &&
           productos.map((producto) => (
             <li key={producto.id}>
-              <ItemCard item={producto} />
+              <ItemCard item={producto} inCart={inCart} />
             </li>
           ))}
       </ul>

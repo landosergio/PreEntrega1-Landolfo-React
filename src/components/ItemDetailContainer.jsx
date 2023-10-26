@@ -16,8 +16,6 @@ function ItemDeatailContainer() {
     );
   }, []);
 
-  function onAdd() {}
-
   return (
     <div className="flex justify-center">
       {producto ? (

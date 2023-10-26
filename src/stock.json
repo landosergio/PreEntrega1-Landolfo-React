@@ -4,7 +4,7 @@
     "id": 1,
     "categoria": "Electrónica",
     "precio": 207000,
-    "cant": 4,
+    "stock": 4,
     "rutaImg": "/images/tv-samsung-50.png",
     "precioFormat": "$207.000",
     "descripcion": "El Purificador de Aire EcoBreathe es la solución definitiva para mejorar la calidad del aire en tu hogar y garantizar un ambiente saludable para toda tu familia. Diseñado con la más alta tecnología y un enfoque en la sostenibilidad, este innovador dispositivo se convertirá en tu aliado para respirar aire fresco y puro todos los días."
@@ -14,7 +14,7 @@
     "id": 2,
     "categoria": "Electrónica",
     "precio": 260000,
-    "cant": 999,
+    "stock": 10,
     "rutaImg": "/images/notebook-lenovo.jpeg",
     "precioFormat": "$260.000",
     "descripcion": "El Purificador de Aire EcoBreathe es la solución definitiva para mejorar la calidad del aire en tu hogar y garantizar un ambiente saludable para toda tu familia. Diseñado con la más alta tecnología y un enfoque en la sostenibilidad, este innovador dispositivo se convertirá en tu aliado para respirar aire fresco y puro todos los días."
@@ -24,7 +24,7 @@
     "id": 3,
     "categoria": "Ropa",
     "precio": 65000,
-    "cant": 999,
+    "stock": 2,
     "rutaImg": "/images/zapa-nike.jpeg",
     "precioFormat": "$65.000",
     "descripcion": "El Purificador de Aire EcoBreathe es la solución definitiva para mejorar la calidad del aire en tu hogar y garantizar un ambiente saludable para toda tu familia. Diseñado con la más alta tecnología y un enfoque en la sostenibilidad, este innovador dispositivo se convertirá en tu aliado para respirar aire fresco y puro todos los días."
@@ -34,7 +34,7 @@
     "id": 4,
     "categoria": "Ropa",
     "precio": 6000,
-    "cant": 999,
+    "stock": 7,
     "rutaImg": "/images/rem-blanca-lisa.webp",
     "precioFormat": "$6.000",
     "descripcion": "El Purificador de Aire EcoBreathe es la solución definitiva para mejorar la calidad del aire en tu hogar y garantizar un ambiente saludable para toda tu familia. Diseñado con la más alta tecnología y un enfoque en la sostenibilidad, este innovador dispositivo se convertirá en tu aliado para respirar aire fresco y puro todos los días."
@@ -44,7 +44,7 @@
     "id": 5,
     "categoria": "Ropa",
     "precio": 5200,
-    "cant": 999,
+    "stock": 999,
     "rutaImg": "/images/rem-negra-lisa.webp",
     "precioFormat": "$5.200",
     "descripcion": "El Purificador de Aire EcoBreathe es la solución definitiva para mejorar la calidad del aire en tu hogar y garantizar un ambiente saludable para toda tu familia. Diseñado con la más alta tecnología y un enfoque en la sostenibilidad, este innovador dispositivo se convertirá en tu aliado para respirar aire fresco y puro todos los días."
@@ -54,7 +54,7 @@
     "id": 6,
     "categoria": "Ropa",
     "precio": 22000,
-    "cant": 999,
+    "stock": 999,
     "rutaImg": "/images/botas-mujer.jpg",
     "precioFormat": "$22.000",
     "descripcion": "El Purificador de Aire EcoBreathe es la solución definitiva para mejorar la calidad del aire en tu hogar y garantizar un ambiente saludable para toda tu familia. Diseñado con la más alta tecnología y un enfoque en la sostenibilidad, este innovador dispositivo se convertirá en tu aliado para respirar aire fresco y puro todos los días."
@@ -64,7 +64,7 @@
     "id": 7,
     "categoria": "Música",
     "precio": 830000,
-    "cant": 999,
+    "stock": 999,
     "rutaImg": "/images/guit-fender.jpg",
     "precioFormat": "$830.000",
     "descripcion": "El Purificador de Aire EcoBreathe es la solución definitiva para mejorar la calidad del aire en tu hogar y garantizar un ambiente saludable para toda tu familia. Diseñado con la más alta tecnología y un enfoque en la sostenibilidad, este innovador dispositivo se convertirá en tu aliado para respirar aire fresco y puro todos los días."
@@ -74,7 +74,7 @@
     "id": 8,
     "categoria": "Música",
     "precio": 357000,
-    "cant": 999,
+    "stock": 999,
     "rutaImg": "/images/piano-digital.jpg",
     "precioFormat": "$357.000",
     "descripcion": "El Purificador de Aire EcoBreathe es la solución definitiva para mejorar la calidad del aire en tu hogar y garantizar un ambiente saludable para toda tu familia. Diseñado con la más alta tecnología y un enfoque en la sostenibilidad, este innovador dispositivo se convertirá en tu aliado para respirar aire fresco y puro todos los días."
@@ -84,7 +84,7 @@
     "id": 9,
     "categoria": "Música",
     "precio": 290000,
-    "cant": 999,
+    "stock": 999,
     "rutaImg": "/images/bateria-parquer.webp",
     "precioFormat": "$290.000",
     "descripcion": "El Purificador de Aire EcoBreathe es la solución definitiva para mejorar la calidad del aire en tu hogar y garantizar un ambiente saludable para toda tu familia. Diseñado con la más alta tecnología y un enfoque en la sostenibilidad, este innovador dispositivo se convertirá en tu aliado para respirar aire fresco y puro todos los días."
@@ -94,7 +94,7 @@
     "id": 10,
     "categoria": "Hogar",
     "precio": 160000,
-    "cant": 999,
+    "stock": 999,
     "rutaImg": "/images/coc-whirlpool.jpg",
     "precioFormat": "$160.000",
     "descripcion": "El Purificador de Aire EcoBreathe es la solución definitiva para mejorar la calidad del aire en tu hogar y garantizar un ambiente saludable para toda tu familia. Diseñado con la más alta tecnología y un enfoque en la sostenibilidad, este innovador dispositivo se convertirá en tu aliado para respirar aire fresco y puro todos los días."
@@ -104,7 +104,7 @@
     "id": 11,
     "categoria": "Hogar",
     "precio": 45000,
-    "cant": 999,
+    "stock": 999,
     "rutaImg": "/images/horno-elec.webp",
     "precioFormat": "$45.000",
     "descripcion": "El Purificador de Aire EcoBreathe es la solución definitiva para mejorar la calidad del aire en tu hogar y garantizar un ambiente saludable para toda tu familia. Diseñado con la más alta tecnología y un enfoque en la sostenibilidad, este innovador dispositivo se convertirá en tu aliado para respirar aire fresco y puro todos los días."
@@ -114,7 +114,7 @@
     "id": 12,
     "categoria": "Hogar",
     "precio": 28000,
-    "cant": 999,
+    "stock": 999,
     "rutaImg": "/images/kit-herramientas.jpg",
     "precioFormat": "$28.000",
     "descripcion": "El Purificador de Aire EcoBreathe es la solución definitiva para mejorar la calidad del aire en tu hogar y garantizar un ambiente saludable para toda tu familia. Diseñado con la más alta tecnología y un enfoque en la sostenibilidad, este innovador dispositivo se convertirá en tu aliado para respirar aire fresco y puro todos los días."
