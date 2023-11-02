@@ -5,7 +5,7 @@ function NavBar() {
   return (
     <div className="flex justify-between items-center px-3  bg-slate-700 text-gray-100 shadow-md">
       {/* BRAND */}
-      <div className="flex items-center">
+      <div className="flex flex-col md:flex-row items-center">
         <Link to="/">
           <img
             src="/images/liebre.png"
@@ -20,7 +20,7 @@ function NavBar() {
 
       {/* NAV */}
       <nav className="flex items-end self-end me-5 ">
-        <ul className="flex">
+        <ul className="flex flex-wrap">
           <li className="rounded-tl rounded-tr font-bold hover:bg-slate-500 transition delay-50">
             <NavLink
               to="/categoria/Música"

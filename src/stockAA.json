@@ -1,0 +1,110 @@
+[
+  {
+    "nombre": "TV Samsung 50 pulgadas",
+    "categoria": "Electrónica",
+    "precio": 207000,
+    "stock": 4,
+    "rutaImg": "/images/tv-samsung-50.png",
+    "precioFormat": "$207.000",
+    "descripcion": "La TV Samsung de 50 pulgadas ofrece una experiencia de visualización impresionante con su pantalla de gran tamaño y calidad de imagen excepcional. Con tecnología avanzada y diseño elegante, es perfecta para disfrutar de tus programas, películas y juegos favoritos en casa."
+  },
+  {
+    "nombre": "Notebook Lenovo",
+    "categoria": "Electrónica",
+    "precio": 260000,
+    "stock": 10,
+    "rutaImg": "/images/notebook-lenovo.jpeg",
+    "precioFormat": "$260.000",
+    "descripcion": "La notebook Lenovo es una potente computadora portátil que combina un diseño elegante con un rendimiento excepcional. Equipada con características de vanguardia y una duración de batería sólida, es ideal para trabajar, estudiar o entretenerse en movimiento."
+  },
+  {
+    "nombre": "Zapatillas Nike",
+    "categoria": "Ropa",
+    "precio": 65000,
+    "stock": 2,
+    "rutaImg": "/images/zapa-nike.jpeg",
+    "precioFormat": "$65.000",
+    "descripcion": "Estas zapatillas Nike son sinónimo de estilo y comodidad. Con un diseño moderno y tecnología de amortiguación de primera calidad, te brindan el equilibrio perfecto entre moda y funcionalidad para tus actividades diarias."
+  },
+  {
+    "nombre": "Remera blanca lisa",
+    "categoria": "Ropa",
+    "precio": 6000,
+    "stock": 7,
+    "rutaImg": "/images/rem-blanca-lisa.webp",
+    "precioFormat": "$6.000",
+    "descripcion": "Esta remera blanca lisa es una prenda versátil y atemporal. Su diseño sencillo y elegante la convierte en un básico esencial en cualquier guardarropa, perfecta para combinar con diversos estilos y ocasiones."
+  },
+  {
+    "nombre": "Remera negra lisa",
+    "categoria": "Ropa",
+    "precio": 5200,
+    "stock": 999,
+    "rutaImg": "/images/rem-negra-lisa.webp",
+    "precioFormat": "$5.200",
+    "descripcion": "Esta remera negra lisa es un clásico atemporal. Su diseño simple y versátil la convierte en una prenda esencial que combina con cualquier estilo y ocasión, ofreciendo un toque de elegancia y versatilidad en tu vestuario."
+  },
+  {
+    "nombre": "Botas mujer 47 Street",
+    "categoria": "Ropa",
+    "precio": 22000,
+    "stock": 999,
+    "rutaImg": "/images/botas-mujer.jpg",
+    "precioFormat": "$22.000",
+    "descripcion": "Las botas de mujer 47 Street son la combinación perfecta de estilo y comodidad. Con diseños a la moda y una fabricación de calidad, estas botas te mantendrán elegante y cómoda en cualquier ocasión."
+  },
+  {
+    "nombre": "Guitarra Eléctrica Fender",
+    "categoria": "Música",
+    "precio": 830000,
+    "stock": 999,
+    "rutaImg": "/images/guit-fender.jpg",
+    "precioFormat": "$830.000",
+    "descripcion": "La guitarra eléctrica Fender es un icono de la música, conocida por su calidad de sonido excepcional y su legado en la industria. Con un diseño clásico y un tono inconfundible, es la elección perfecta para músicos de todos los niveles que buscan una experiencia de interpretación excepcional."
+  },
+  {
+    "nombre": "Piano digital Yamaha P-45",
+    "categoria": "Música",
+    "precio": 357000,
+    "stock": 999,
+    "rutaImg": "/images/piano-digital.jpg",
+    "precioFormat": "$357.000",
+    "descripcion": "El piano digital Yamaha P-45 ofrece una experiencia musical excepcional. Con su teclado sensible al tacto y sonidos de piano auténticos, brinda a los músicos una interpretación realista y portabilidad. Es ideal para pianistas de todos los niveles que buscan calidad y comodidad en un paquete compacto."
+  },
+  {
+    "nombre": "Batería acústica Parquer",
+    "categoria": "Música",
+    "precio": 290000,
+    "stock": 999,
+    "rutaImg": "/images/bateria-parquer.webp",
+    "precioFormat": "$290.000",
+    "descripcion": "La batería acústica Parquer es una elección destacada para los amantes de la música. Con un diseño sólido, sonidos potentes y calidad de construcción, esta batería ofrece una experiencia de percusión excepcional para músicos de todos los niveles. Ideal para expresar tu creatividad musical."
+  },
+  {
+    "nombre": "Cocina Whirlpool",
+    "categoria": "Hogar",
+    "precio": 160000,
+    "stock": 999,
+    "rutaImg": "/images/coc-whirlpool.jpg",
+    "precioFormat": "$160.000",
+    "descripcion": "La cocina Whirlpool es un electrodoméstico de calidad que combina diseño moderno con funcionalidad excepcional. Equipada con características avanzadas y una construcción duradera, esta cocina facilita la preparación de deliciosas comidas, convirtiendo la cocina en una experiencia más eficiente y agradable."
+  },
+  {
+    "nombre": "Horno eléctrico Peabody",
+    "categoria": "Hogar",
+    "precio": 45000,
+    "stock": 999,
+    "rutaImg": "/images/horno-elec.webp",
+    "precioFormat": "$45.000",
+    "descripcion": "El horno eléctrico Peabody es la elección perfecta para cocinar con precisión y comodidad. Con su diseño elegante y funciones avanzadas, este horno ofrece una cocción uniforme y resultados deliciosos. Es una adición esencial para cualquier cocina moderna."
+  },
+  {
+    "nombre": "Kit de herramientas Kroner",
+    "categoria": "Hogar",
+    "precio": 28000,
+    "stock": 999,
+    "rutaImg": "/images/kit-herramientas.jpg",
+    "precioFormat": "$28.000",
+    "descripcion": "El kit de herramientas Kroner es la solución completa para todas tus necesidades de bricolaje y reparación. Con una selección variada de herramientas de alta calidad y duraderas, este conjunto te proporciona las herramientas esenciales para cualquier proyecto. Mantén tu hogar en perfectas condiciones con este kit confiable y versátil."
+  }
+]

@@ -1,12 +1,61 @@
-import ItemCard from "./ItemCard";
+import Item from "./Item";
 import { CartContext } from "./cartContext";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+
+import { toast } from "react-toastify";
+
+import { fbase } from "../firebaseConfig";
+import { getFirestore, serverTimestamp } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 
 function Cart() {
   const carrito = useContext(CartContext);
 
   let inCart = true;
+  let totalCarrito = carrito.cartList.reduce(
+    (acum, prod) => acum + prod.precio * prod.cant,
+    0
+  );
+
+  function crearOrden(nombre, correo, telefono) {
+    const order = {
+      buyer: { name: nombre, email: correo, phone: telefono },
+      items: carrito.cartList.map((prod) => ({
+        id: prod.id,
+        title: prod.nombre,
+        quantity: prod.cant,
+        price: prod.precio,
+      })),
+      date: serverTimestamp(),
+      total: totalCarrito,
+    };
+    return order;
+  }
+
+  function finalizarCompra(e) {
+    e.preventDefault();
+    const nombre = e.currentTarget.elements.name.value;
+    const correo = e.currentTarget.elements.email.value;
+    const telefono = e.currentTarget.elements.phone.value;
+
+    if (nombre && correo && telefono) {
+      if (!Number.isNaN(telefono) && telefono.toString().length == 10) {
+        const order = crearOrden(nombre, correo, telefono);
+        const db = getFirestore(fbase);
+        const ordersCollection = collection(db, "orders");
+        const docRef = addDoc(ordersCollection, order);
+
+        docRef.then(() => carrito.clearCart());
+      } else {
+        toast.error(
+          "Debes ingresar un teléfono en formato válido de 10 dígitos"
+        );
+      }
+    } else {
+      toast.error("Debes completar todos los datos");
+    }
+  }
 
   return (
     <>
@@ -19,7 +68,7 @@ function Cart() {
             <ul className="flex flex-wrap my-10">
               {carrito.cartList.map((producto) => (
                 <li key={producto.id} className="flex my-10">
-                  <ItemCard item={producto} inCart={inCart} />
+                  <Item item={producto} inCart={inCart} />
                   <div className="flex flex-col items-center mx-10">
                     <p className="text-2xl ">Cantidad: {producto.cant} </p>
                     <button
@@ -39,13 +88,49 @@ function Cart() {
               >
                 VACIAR CARRITO
               </button>
-              <p className="text-3xl">
-                Valor total: $
-                {carrito.cartList.reduce(
-                  (acum, prod) => acum + prod.precio * prod.cant,
-                  0
-                )}
-              </p>
+              <p className="text-3xl">Valor total: ${totalCarrito}</p>
+            </div>
+
+            <div className="flex justify-center">
+              <form
+                method="post"
+                onSubmit={(e) => finalizarCompra(e)}
+                className="flex flex-col my-10"
+              >
+                <label className="flex justify-between my-2">
+                  Nombre:
+                  <input
+                    name="name"
+                    type="text"
+                    className="mx-4 border rounded-md"
+                  />
+                </label>
+                <label className="flex justify-between my-2">
+                  Correo:
+                  <input
+                    name="email"
+                    type="email"
+                    className="mx-4 border rounded-md"
+                  />
+                </label>
+                <label className="flex justify-between my-2">
+                  Teléfono:
+                  <input name="phone" className="mx-4 border rounded-md" />
+                </label>
+
+                <button
+                  type="reset"
+                  className="mx-auto my-2 p-1 text-sm border border-slate-800 rounded-md"
+                >
+                  Borrar
+                </button>
+                <button
+                  type="submit"
+                  className="mx-auto my-2 p-2 text-sm font-bold  border-2 border-slate-800 rounded-md"
+                >
+                  FINALIZAR COMPRA
+                </button>
+              </form>
             </div>
           </>
         ) : (

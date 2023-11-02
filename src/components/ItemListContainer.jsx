@@ -1,8 +1,10 @@
-import ItemCount from "./ItemCount";
-import ItemCard from "./ItemCard";
+import ItemList from "./ItemList";
 import { useEffect, useState } from "react";
-import stockProductos from "../stock.json";
 import { useParams } from "react-router-dom";
+
+import { fbase } from "../firebaseConfig";
+import { getFirestore } from "firebase/firestore";
+import { collection, getDocs, where, query } from "firebase/firestore";
 
 function ItemListContainer({ greeting }) {
   const [productos, setProductos] = useState([]);
@@ -11,35 +13,32 @@ function ItemListContainer({ greeting }) {
   let inCart = false;
 
   useEffect(() => {
-    const pedirItems = new Promise((resolve, reject) => {
-      setTimeout(() => resolve(stockProductos), 1000);
-    });
-    pedirItems.then((stockProductos) => {
-      let categoriaProductos = stockProductos;
+    const db = getFirestore(fbase);
+    const productosCollection = collection(db, "productos");
+    const q = query(
+      productosCollection,
+      where("categoria", "==", categoria || "")
+    );
 
-      if (categoria) {
-        categoriaProductos = stockProductos.filter(
-          (producto) => producto.categoria == categoria
-        );
-      }
-      setProductos(categoriaProductos);
+    const consulta = categoria ? getDocs(q) : getDocs(productosCollection);
+
+    consulta.then((productosDocs) => {
+      const listaProductos = productosDocs.docs.map((prod) => ({
+        id: prod.id,
+        ...prod.data(),
+      }));
+
+      setProductos(listaProductos);
     });
   }, [categoria]);
 
   return (
-    <div className="flex flex-col items-center ">
-      <h2 className="inline-block my-8 text-3xl text-slate-700  font-bold ">
-        {greeting || categoria}
-      </h2>
-      <ul className="grid xl:grid-cols-4 md:grid-cols-2 gap-x-10 gap-y-20 my-20">
-        {productos[0] &&
-          productos.map((producto) => (
-            <li key={producto.id}>
-              <ItemCard item={producto} inCart={inCart} />
-            </li>
-          ))}
-      </ul>
-    </div>
+    <ItemList
+      greeting={greeting}
+      categoria={categoria}
+      productos={productos}
+      inCart={inCart}
+    ></ItemList>
   );
 }
 

@@ -1,19 +1,22 @@
 import { useEffect, useState } from "react";
-import stockProductos from "../stock.json";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
+
+import { fbase } from "../firebaseConfig";
+import { getFirestore } from "firebase/firestore";
+import { getDoc, doc } from "firebase/firestore";
 
 function ItemDeatailContainer() {
   const [producto, setProducto] = useState(0);
   const { id } = useParams();
 
   useEffect(() => {
-    const pedirItems = new Promise((resolve, reject) => {
-      setTimeout(() => resolve(stockProductos), 1000);
+    const db = getFirestore(fbase);
+    const docRef = doc(db, "productos", id);
+
+    getDoc(docRef).then((prod) => {
+      setProducto({ id: prod.id, ...prod.data() });
     });
-    pedirItems.then((stockProductos) =>
-      setProducto(stockProductos.find((producto) => producto.id == id))
-    );
   }, []);
 
   return (

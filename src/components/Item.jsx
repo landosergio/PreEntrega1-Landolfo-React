@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function ItemCard({ item, inCart }) {
+function Item({ item, inCart }) {
   return (
     <Link to={`/item/${item.id}`}>
       <div
@@ -28,4 +28,4 @@ function ItemCard({ item, inCart }) {
   );
 }
 
-export default ItemCard;
+export default Item;
