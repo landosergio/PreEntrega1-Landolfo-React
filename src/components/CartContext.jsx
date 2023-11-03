@@ -3,30 +3,40 @@ import { createContext, useState } from "react";
 export const CartContext = createContext();
 
 function CartContextProvider({ children }) {
-  const [cartList, setCartList] = useState([]);
+  const [cartList, setCartList] = useState({
+    lista: [],
+    compraTerminada: [],
+  });
 
   function isInCart(item) {
-    return cartList.find((prod) => prod.id == item.id);
+    return cartList.lista.find((prod) => prod.id == item.id);
   }
 
   function addItem(item, cant) {
-    let cartCopy = JSON.parse(JSON.stringify(cartList));
+    let cartCopy = JSON.parse(JSON.stringify(cartList.lista));
 
     isInCart(item) &&
       (cartCopy = cartCopy.filter((prod) => prod.id != item.id));
 
     item.cant = cant;
     cartCopy.push(item);
-    setCartList(cartCopy);
+
+    setCartList({ lista: cartCopy, compraTerminada: [] });
   }
 
   function removeItem(id) {
-    let cartCopy = cartList.filter((item) => item.id != id);
-    setCartList(cartCopy);
+    let cartCopy = cartList.lista.filter((item) => item.id != id);
+    setCartList({ lista: cartCopy, compraTerminada: [] });
   }
 
   function clearCart() {
-    setCartList([]);
+    setCartList({ lista: [], compraTerminada: false });
+  }
+
+  function terminarCompra() {
+    let cartCopy = JSON.parse(JSON.stringify(cartList.lista));
+
+    setCartList({ lista: [], compraTerminada: cartCopy });
   }
 
   return (
@@ -36,6 +46,7 @@ function CartContextProvider({ children }) {
         addItem,
         removeItem,
         clearCart,
+        terminarCompra,
       }}
     >
       {children}

@@ -12,8 +12,35 @@ import { collection, addDoc } from "firebase/firestore";
 function Cart() {
   const carrito = useContext(CartContext);
 
+  if (carrito.cartList.compraTerminada[0]) {
+    return (
+      <div className="flex flex-col items-center">
+        <h2 className=" my-8 text-3xl text-slate-700  font-bold">
+          ¡Compra terminada!
+        </h2>
+        <ul className="my-10">
+          {carrito.cartList.compraTerminada.map((producto) => (
+            <li key={producto.id} className="flex my-2">
+              <p>
+                {producto.nombre} ---- Cant: {producto.cant}
+              </p>
+            </li>
+          ))}
+        </ul>
+        <Link to="/">
+          <button
+            onClick={carrito.clearCart}
+            className="mx-auto my-2 p-2 text-sm font-bold  border-2 border-slate-800 rounded-md"
+          >
+            Volver al catálogo
+          </button>
+        </Link>
+      </div>
+    );
+  }
+
   let inCart = true;
-  let totalCarrito = carrito.cartList.reduce(
+  let totalCarrito = carrito.cartList.lista.reduce(
     (acum, prod) => acum + prod.precio * prod.cant,
     0
   );
@@ -21,7 +48,7 @@ function Cart() {
   function crearOrden(nombre, correo, telefono) {
     const order = {
       buyer: { name: nombre, email: correo, phone: telefono },
-      items: carrito.cartList.map((prod) => ({
+      items: carrito.cartList.lista.map((prod) => ({
         id: prod.id,
         title: prod.nombre,
         quantity: prod.cant,
@@ -46,7 +73,7 @@ function Cart() {
         const ordersCollection = collection(db, "orders");
         const docRef = addDoc(ordersCollection, order);
 
-        docRef.then(() => carrito.clearCart());
+        docRef.then(() => carrito.terminarCompra());
       } else {
         toast.error(
           "Debes ingresar un teléfono en formato válido de 10 dígitos"
@@ -63,10 +90,10 @@ function Cart() {
         Carrito
       </h2>
       <div className="container mx-auto">
-        {carrito.cartList[0] ? (
+        {carrito.cartList.lista[0] ? (
           <>
             <ul className="flex flex-wrap my-10">
-              {carrito.cartList.map((producto) => (
+              {carrito.cartList.lista.map((producto) => (
                 <li key={producto.id} className="flex my-10">
                   <Item item={producto} inCart={inCart} />
                   <div className="flex flex-col items-center mx-10">
