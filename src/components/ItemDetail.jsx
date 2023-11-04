@@ -38,9 +38,9 @@ function ItemDetail({ producto }) {
               >
                 Cancelar
               </button>
-              <Link to="/cart">
+              <Link className="rounded-md" to="/cart">
                 <button
-                  className="border py-2 px-6 m-2 rounded-md text-xs font-bold"
+                  className="border py-2 px-6  rounded-md text-xs font-bold"
                   onClick={() => carrito.addItem(producto, cantProd)}
                 >
                   Agregar al carrito

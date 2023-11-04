@@ -22,14 +22,18 @@ function ItemListContainer({ greeting }) {
 
     const consulta = categoria ? getDocs(q) : getDocs(productosCollection);
 
-    consulta.then((productosDocs) => {
-      const listaProductos = productosDocs.docs.map((prod) => ({
-        id: prod.id,
-        ...prod.data(),
-      }));
+    consulta
+      .then((productosDocs) => {
+        const listaProductos = productosDocs.docs.map((prod) => ({
+          id: prod.id,
+          ...prod.data(),
+        }));
 
-      setProductos(listaProductos);
-    });
+        setProductos(listaProductos);
+      })
+      .catch(() => {
+        toast.error("Hubo un problema, inténtalo de nuevo");
+      });
   }, [categoria]);
 
   return (

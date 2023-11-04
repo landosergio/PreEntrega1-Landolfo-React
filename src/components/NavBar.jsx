@@ -10,7 +10,6 @@ function NavBar() {
   if (!carrito.cartList.compraTerminada[0]) {
     return (
       <div className="flex justify-between items-center px-3  bg-slate-700 text-gray-100 shadow-md">
-        {/* BRAND */}
         <div className="flex flex-col md:flex-row items-center">
           <Link to="/">
             <img
@@ -26,7 +25,6 @@ function NavBar() {
           </Link>
         </div>
 
-        {/* NAV */}
         <nav className="flex items-end self-end me-5 ">
           <ul className="flex flex-wrap">
             <li className="rounded-tl rounded-tr font-bold hover:bg-slate-500 transition delay-50">

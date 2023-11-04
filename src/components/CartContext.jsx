@@ -30,13 +30,14 @@ function CartContextProvider({ children }) {
   }
 
   function clearCart() {
-    setCartList({ lista: [], compraTerminada: false });
+    setCartList({ lista: [], compraTerminada: [] });
   }
 
-  function terminarCompra() {
+  function checkout(docRef) {
     let cartCopy = JSON.parse(JSON.stringify(cartList.lista));
-
-    setCartList({ lista: [], compraTerminada: cartCopy });
+    docRef.then((infoCompra) =>
+      setCartList({ lista: [infoCompra], compraTerminada: cartCopy })
+    );
   }
 
   return (
@@ -46,7 +47,7 @@ function CartContextProvider({ children }) {
         addItem,
         removeItem,
         clearCart,
-        terminarCompra,
+        checkout,
       }}
     >
       {children}

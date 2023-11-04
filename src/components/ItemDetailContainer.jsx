@@ -14,15 +14,25 @@ function ItemDeatailContainer() {
     const db = getFirestore(fbase);
     const docRef = doc(db, "productos", id);
 
-    getDoc(docRef).then((prod) => {
-      setProducto({ id: prod.id, ...prod.data() });
-    });
+    getDoc(docRef)
+      .then((prod) => {
+        setProducto({ id: prod.id, ...prod.data() });
+      })
+      .catch(() => {
+        toast.error("Hubo un problema, inténtalo de nuevo");
+      });
   }, []);
 
   return (
     <div className="flex justify-center">
       {producto ? (
-        <ItemDetail producto={producto} />
+        producto.nombre ? (
+          <ItemDetail producto={producto} />
+        ) : (
+          <p className="my-10 text-2xl">
+            No existe un producto con el id "{producto.id}"
+          </p>
+        )
       ) : (
         <p className="my-10 text-2xl">Cargando...</p>
       )}

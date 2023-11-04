@@ -27,10 +27,13 @@ function Cart() {
             </li>
           ))}
         </ul>
-        <Link to="/">
+        <p className="my-5">
+          Código de la compra: {carrito.cartList.lista[0].id}
+        </p>
+        <Link className="my-2 rounded-md" to="/">
           <button
             onClick={carrito.clearCart}
-            className="mx-auto my-2 p-2 text-sm font-bold  border-2 border-slate-800 rounded-md"
+            className="mx-auto  p-2 text-sm font-bold  border-2 border-slate-800 rounded-md"
           >
             Volver al catálogo
           </button>
@@ -72,8 +75,11 @@ function Cart() {
         const db = getFirestore(fbase);
         const ordersCollection = collection(db, "orders");
         const docRef = addDoc(ordersCollection, order);
-
-        docRef.then(() => carrito.terminarCompra());
+        docRef
+          .then(() => carrito.checkout(docRef))
+          .catch(() => {
+            toast.error("Hubo un problema, inténtalo de nuevo");
+          });
       } else {
         toast.error(
           "Debes ingresar un teléfono en formato válido de 10 dígitos"
