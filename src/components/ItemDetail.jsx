@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import ItemCount from "./ItemCount";
 
-import { CartContext } from "./cartContext";
+import { CartContext } from "./CartContext";
 
 function ItemDetail({ producto }) {
   const [cantProd, setCantProd] = useState(0);

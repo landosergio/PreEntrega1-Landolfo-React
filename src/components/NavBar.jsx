@@ -2,7 +2,7 @@ import CartWidget from "./CartWidget";
 import { NavLink, Link } from "react-router-dom";
 
 import { useContext } from "react";
-import { CartContext } from "./cartContext";
+import { CartContext } from "./CartContext";
 
 function NavBar() {
   const carrito = useContext(CartContext);

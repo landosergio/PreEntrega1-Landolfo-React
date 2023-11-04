@@ -3,7 +3,7 @@ import ItemListContainer from "./components/ItemListContainer.jsx";
 import ItemDeatailContainer from "./components/ItemDetailContainer.jsx";
 import Cart from "./components/Cart.jsx";
 
-import CartContextProvider from "./components/cartContext.jsx";
+import CartContextProvider from "./components/CartContext.jsx";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
