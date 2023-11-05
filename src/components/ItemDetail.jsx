@@ -1,9 +1,9 @@
-import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
-
 import ItemCount from "./ItemCount";
 
+import { useContext, useState } from "react";
 import { CartContext } from "./CartContext";
+
+import { Link } from "react-router-dom";
 
 function ItemDetail({ producto }) {
   const [cantProd, setCantProd] = useState(0);

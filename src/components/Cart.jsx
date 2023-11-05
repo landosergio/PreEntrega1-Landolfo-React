@@ -1,13 +1,15 @@
 import Item from "./Item";
+
 import { CartContext } from "./CartContext";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 
-import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 import { fbase } from "../firebaseConfig";
 import { getFirestore, serverTimestamp } from "firebase/firestore";
 import { collection, addDoc } from "firebase/firestore";
+
+import { toast } from "react-toastify";
 
 import { calcTotal } from "../utilities";
 
