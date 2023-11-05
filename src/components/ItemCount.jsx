@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { toast } from "react-toastify";
+
 function ItemCount({ initial, stock, onAdd }) {
   const [cantProd, setCantProd] = useState(initial);
 
@@ -24,7 +26,11 @@ function ItemCount({ initial, stock, onAdd }) {
         <span className="lg:mx-12 lg:px-3 py-1  lg:text-2xl"> {cantProd} </span>
         <button
           className="px-3 py-1 "
-          onClick={() => (cantProd < stock ? setCantProd(cantProd + 1) : null)}
+          onClick={() =>
+            cantProd < stock
+              ? setCantProd(cantProd + 1)
+              : toast.warn("No hay más unidades en stock", { toastId: "stock" })
+          }
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -14,7 +14,9 @@ function ItemDeatailContainer() {
     const db = getFirestore(fbase);
     const docRef = doc(db, "productos", id);
 
-    getDoc(docRef)
+    const consulta = getDoc(docRef);
+
+    consulta
       .then((prod) => {
         setProducto({ id: prod.id, ...prod.data() });
       })

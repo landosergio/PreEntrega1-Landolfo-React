@@ -9,6 +9,8 @@ import { fbase } from "../firebaseConfig";
 import { getFirestore, serverTimestamp } from "firebase/firestore";
 import { collection, addDoc } from "firebase/firestore";
 
+import { calcTotal } from "../utilities";
+
 function Cart() {
   const carrito = useContext(CartContext);
 
@@ -27,6 +29,9 @@ function Cart() {
             </li>
           ))}
         </ul>
+        <p className="my-5 text-xl">
+          Total: ${calcTotal(carrito.cartList.compraTerminada)}
+        </p>
         <p className="my-5">
           Código de la compra: {carrito.cartList.lista[0].id}
         </p>
@@ -43,10 +48,7 @@ function Cart() {
   }
 
   let inCart = true;
-  let totalCarrito = carrito.cartList.lista.reduce(
-    (acum, prod) => acum + prod.precio * prod.cant,
-    0
-  );
+  let totalCarrito = calcTotal(carrito.cartList.lista);
 
   function crearOrden(nombre, correo, telefono) {
     const order = {
@@ -82,11 +84,12 @@ function Cart() {
           });
       } else {
         toast.error(
-          "Debes ingresar un teléfono en formato válido de 10 dígitos"
+          "Debes ingresar un teléfono en formato válido de 10 dígitos",
+          { toastId: "tel" }
         );
       }
     } else {
-      toast.error("Debes completar todos los datos");
+      toast.error("Debes completar todos los datos", { toastId: "datos" });
     }
   }
 

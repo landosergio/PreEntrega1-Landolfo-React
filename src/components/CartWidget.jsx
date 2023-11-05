@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
 
+import { calcCant } from "../utilities";
+
 function CartWidget() {
   const carrito = useContext(CartContext);
 
@@ -22,8 +24,7 @@ function CartWidget() {
           />
         </svg>
         <span>
-          {carrito.cartList.lista[0] &&
-            carrito.cartList.lista.reduce((acum, prod) => acum + prod.cant, 0)}
+          {carrito.cartList.lista[0] && calcCant(carrito.cartList.lista)}
         </span>
       </div>
     );
