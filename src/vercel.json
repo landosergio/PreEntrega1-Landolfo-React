@@ -1,9 +1,8 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }],
-  "routes": [
-    { "src": "/", "dest": "/" },
-    { "src": "/item", "dest": "/" },
-    { "src": "/categoria", "dest": "/" },
-    { "src": "/cart", "dest": "/" }
+  "rewrites": [
+    {
+      "source": "/((?!api/.*).*)",
+      "destination": "/index.html"
+    }
   ]
 }
